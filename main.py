@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from langchain_openai import ChatOpenAI
-from langchain_anthropic import ChatAnthropic
+# from langchain_anthropic import ChatAnthropic
 import os
 import json
 from langchain_core.prompts import ChatPromptTemplate
@@ -60,7 +60,7 @@ agent = create_tool_calling_agent(
 
 agent_executor = AgentExecutor(agent=agent, tools=tools,verbose=True)
 
-query = input("What an i Help You research?: ")
+query = input("What can i Help You research?: ")
 
 raw_response = agent_executor.invoke({"query":query })
 
